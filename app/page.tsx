@@ -55,7 +55,7 @@ export default function Home() {
   const [opened, setOpened] = useState(false);
 
   return (
-    <div className="overflow-hidden pb-24 sm:py-32 bg-white">
+    <div className="overflow-hidden pb-32 sm:py-32 bg-white">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
           <div className="lg:pr-8 lg:pt-1">
@@ -96,7 +96,7 @@ export default function Home() {
                 </div>
               ))}
 
-              <p className="mt-8 text-sm text-gray-500 text-align-center mb-50">
+              <p className="mt-2 text-sm text-gray-500 text-align-center mb-50 bg-white">
                 <span>By selecting a plan, you agree to our </span>
                 <a href="#" className="font-medium text-blue-500 hover:underline">terms</a>
                 <span> and </span>
