@@ -103,7 +103,7 @@ export default function Home() {
                 <a href="#" className="font-medium text-blue-500 hover:underline">privacy policy</a>
               </p>
 
-              <div className="fixed bottom-10 left-0 right-0 flex justify-center border-t border-gray-200">
+              <div className="fixed bottom-4 left-0 right-0 flex justify-center border-t border-gray-200 bg-white">
                 <button
                   className="mt-4 px-6 py-3 font-bold text-white bg-blue-500 rounded-lg hover:bg-blue-600 w-11/12"
                   onClick={() => setOpened(true)}
@@ -116,7 +116,7 @@ export default function Home() {
             {/* pop up */}
             {opened && (
               <div className="fixed inset-0 bg-black bg-opacity-50 z-50">
-                <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-8 rounded-lg w-11/12 mx-auto">
+                <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-8 rounded-lg w-11/12 mx-auto">
                   <span className="flex justify-right text-xl font-bold">
                     Chose payment method
                     <button onClick={() => setOpened(false)} className="ml-auto">
