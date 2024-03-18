@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 /* black color scheme 
-*/
 body,
 .fix-btn,
 .popup {
@@ -24,8 +23,10 @@ button {
   background-color: #52525b;
   color: white;
 }
+*/
 
 /* white color scheme 
+*/
 body,
 .fix-btn,
 .popup {
@@ -37,7 +38,11 @@ body,
 }
 
 .plan {
-  background-color: #f8fafc;
+  border-color: #d1d5db;
+}
+
+.changed {
+  border-color: #2563eb;
 }
 
 .text {
@@ -48,4 +53,3 @@ button {
   background-color: #2563eb;
   color: white;
 }
-*/
