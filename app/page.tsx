@@ -39,17 +39,25 @@ const plans = [
 
 const wallets = [
   {
-    name: 'Visa',
-    icon: CreditCardIcon,
-  },
-  {
-    name: 'Mastercard',
+    name: 'Wallet Pay',
     icon: BanknotesIcon,
+    description: 'TON, USDT, BTC',
   },
   {
-    name: 'Paypal',
-    icon: CurrencyDollarIcon,
+    name: 'Cards',
+    icon: CreditCardIcon,
+    description: 'Visa, Mastercard',
   },
+  {
+    name: 'Yookassa',
+    icon: CurrencyDollarIcon,
+    description: 'RU cards, SBP',
+  },
+  {
+    name: 'PayPal',
+    icon: CreditCardIcon,
+    description: '',
+  }
 ];
 
 export default function Home() {
@@ -110,7 +118,7 @@ export default function Home() {
                 <a href="#" className="font-medium text-blue-500 hover:underline">privacy policy</a>
               </p>
 
-              {/* open pupup */}
+              {/* open popup */}
               <div className="fixed left-0 right-0 flex justify-center border-t border-gray-200 bottom-0 fix-btn">
                 <button
                   className="mt-4 px-6 py-5 font-bold text-white bg-blue-500 rounded-lg hover:bg-blue-600 w-11/12 mb-6"
@@ -124,29 +132,27 @@ export default function Home() {
             {/* popup */}
             {opened && (
               <div className="fixed inset-0 bg-black bg-opacity-50 z-50">
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-8 rounded-lg w-11/12 mx-auto popup">
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-5 rounded-lg w-11/12 mx-auto popup">
                   <span className="flex justify-right text-xl font-bold">
                     Chose payment method
                     <button onClick={() => setOpened(false)} className="ml-auto">
-                      <XMarkIcon className="h-6 w-6 text-gray-500 hover:text-gray-700" />
+                      <XMarkIcon className="h-6 w-6 text-gray-500" />
                     </button>
                   </span>
-                  <dl className="mt-5 max-w-xl space-y-4 text-base leading-3 lg:max-w-none mb-10 bg-slate-100 rounded-lg px-4 py-6">
-                    {wallets.map((wallet, index) => (
-                      <div
-                        key={wallet.name}
-                        {...index !== 0 ? {
-                          className: 'relative pl-9 pt-8 pb-4 cursor-pointer border-t border-gray-200'
-                        } : { className: "relative pl-9 pt-4 pb-4 cursor-pointer" }}
-                      >
-                        <dt className="flex font-semibold vertical-center content-center">
-                          <wallet.icon className="absolute left-1 h-6 w-6 text-blue-500 vertical-center" aria-hidden="true" />
-                          {wallet.name}
-                          <br />
-                          <br />
-                          **** 1234
-                          <ChevronRightIcon className="absolute right-1 h-6 w-6 text-slate-500 vertical-center" />
-                        </dt>{' '}
+                  <dl className="mt-5 max-w-xl space-y-4 text-base mb-10 bg-slate-100 rounded-lg divide-y divide-dashed pt-2">
+                    {wallets.map((item) => (
+                      <div key={item.name} className="relative flex gap-x-3 pt-4 pl-4 pb-2">
+                        <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50">
+                          <item.icon className="h-6 w-6 text-sky-900" aria-hidden="true" />
+                        </div>
+                        <div>
+                          <a href="#" className="font-semibold text-gray-900">
+                            {item.name}
+                            <span className="absolute inset-0" />
+                          </a>
+                          <p className="mt-1 text-gray-600">{item.description}</p>
+                        </div>
+                        <ChevronRightIcon className="absolute right-6 h-6 w-6 text-slate-500 vertical-center" />
                       </div>
                     ))}
                   </dl>
