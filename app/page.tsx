@@ -68,7 +68,7 @@ export default function Home() {
               </div>
 
               {/* text */}
-              <p className="text-2xl font-bold tracking-tight sm:text-2xl h1 -mt-6">Unlock PRO features</p>
+              <p className="text-2xl font-bold tracking-tight sm:text-2xl h1">Unlock PRO features</p>
               <dl className="mt-3 max-w-xl space-y-3 text-base leading-3 lg:max-w-none mb-5">
                 {features.map((feature) => (
                   <div key={feature.name} className="relative pl-9">
@@ -88,7 +88,7 @@ export default function Home() {
                   onClick={() => setChanged(index)}
                   key={index}
                 >
-                  <div key={plan.name} className="p-4">
+                  <div key={plan.name} className="p-3">
                     <p className="flex items-center justify-between">
                       <span className="flex text-sm font-bold">
                         {plan.name}
