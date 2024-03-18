@@ -63,12 +63,12 @@ export default function Home() {
           <div className="lg:pr-8 lg:pt-1">
             <div className="lg:max-w-lg">
               {/* duck */}
-              <div className="flex justify-center">
+              <div className="flex justify-center -mt-10">
                 <Image src="/duck.gif" alt="Duck" width={250} height={250} unoptimized />
               </div>
 
               {/* text */}
-              <p className="mt-2 text-2xl font-bold tracking-tight sm:text-2xl h1">Unlock PRO features</p>
+              <p className="text-2xl font-bold tracking-tight sm:text-2xl h1 -mt-6">Unlock PRO features</p>
               <dl className="mt-3 max-w-xl space-y-3 text-base leading-3 lg:max-w-none mb-5">
                 {features.map((feature) => (
                   <div key={feature.name} className="relative pl-9">
