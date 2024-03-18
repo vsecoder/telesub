@@ -124,7 +124,7 @@ export default function Home() {
             {/* popup */}
             {opened && (
               <div className="fixed inset-0 bg-black bg-opacity-50 z-50">
-                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-8 rounded-lg w-11/12 mx-auto popup">
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-8 rounded-lg w-11/12 mx-auto popup">
                   <span className="flex justify-right text-xl font-bold">
                     Chose payment method
                     <button onClick={() => setOpened(false)} className="ml-auto">
