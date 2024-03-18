@@ -64,7 +64,7 @@ export default function Home() {
             <div className="lg:max-w-lg">
               {/* duck */}
               <div className="flex justify-center -mt-10">
-                <Image src="/duck.gif" alt="Duck" width={250} height={250} unoptimized />
+                <Image src="/duck.gif" alt="Duck" width={220} height={220} unoptimized />
               </div>
 
               {/* text */}
