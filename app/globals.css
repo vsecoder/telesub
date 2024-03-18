@@ -2,54 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
-/* black color scheme 
-body,
-.fix-btn,
-.popup {
+/* ------------------- */
+/* dark color scheme */
+.dark .body,
+.dark .fix-btn,
+.dark .popup {
   background-color: #18181b;
   color: #93939c;
 }
 
-.plan {
+.dark .plan {
   background-color: #242427;
   color: #93939c;
 }
 
-.text {
+.dark .text {
   color: white;
 }
 
-button {
+.dark button {
   background-color: #52525b;
   color: white;
 }
-*/
 
-/* white color scheme 
-*/
-body,
-.fix-btn,
-.popup {
+/* ------------------- */
+/* white color scheme */
+.light .body,
+.light .fix-btn,
+.light .popup {
   background-color: white;
 }
 
-.popup {
+.light .popup {
   background-color: white;
 }
 
-.plan {
+.light .plan {
   border-color: #d1d5db;
 }
 
-.changed {
+.light .changed {
   border-color: #2563eb;
 }
 
-.text {
+.light .text {
   color: black;
 }
 
-button {
+.light button {
   background-color: #2563eb;
   color: white;
 }

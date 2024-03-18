@@ -72,9 +72,25 @@ const WebApp = () => {
   const [opened, setOpened] = useState(false);
   const { user, webApp, data } = useTelegram();
 
+  const [scheme, setScheme] = useState('dark');
+
+  useEffect(() => {
+    let colorScheme = webApp?.colorScheme;
+    console.log('colorScheme', colorScheme);
+    if (colorScheme) {
+      setScheme(colorScheme);
+    }
+  }, [webApp]);
+
   return (
-    <div className="overflow-hidden pb-32 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <div
+      {...scheme === 'dark' ? {
+        className: "overflow-hidden pb-32 sm:py-32 dark"
+      } : {
+        className: "overflow-hidden pb-32 sm:py-32 light"
+      }}
+    >
+      <div className="mx-auto max-w-7xl px-6 lg:px-8 body absolute inset-0">
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
           <div className="lg:pr-8 lg:pt-1">
             <div className="lg:max-w-lg">
@@ -144,9 +160,9 @@ const WebApp = () => {
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-5 rounded-lg w-11/12 mx-auto popup">
                   <span className="flex justify-right text-xl font-bold text">
                     Chose payment method
-                    <button onClick={() => setOpened(false)} className="ml-auto bg-transparent rounded-lg p-1">
+                    <a onClick={() => setOpened(false)} className="ml-auto bg-transparent rounded-lg p-1" href="#">
                       <XMarkIcon className="h-6 w-6 text-gray-500 bg-transparent" aria-hidden="true" />
-                    </button>
+                    </a>
                   </span>
                   <dl className="mt-5 max-w-xl space-y-4 text-base mb-10 bg-slate-100 rounded-lg divide-y divide-dashed pt-2">
                     {wallets.map((item) => (
