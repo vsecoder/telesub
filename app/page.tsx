@@ -84,7 +84,7 @@ const WebApp = () => {
               </div>
 
               {/* text */}
-              <p className="text-2xl font-bold tracking-tight sm:text-2xl text">{user?.first_name}, welcome to our service</p>
+              <p className="text-2xl font-bold tracking-tight sm:text-2xl text">{user?.first_name}, change subscription</p>
               <dl className="mt-3 max-w-xl space-y-3 text-base leading-3 lg:max-w-none mb-5">
                 {features.map((feature) => (
                   <div key={feature.name} className="relative pl-9">
@@ -130,7 +130,7 @@ const WebApp = () => {
               {/* open popup */}
               <div className="fixed left-0 right-0 flex justify-center border-t border-gray-200 bottom-0 fix-btn">
                 <button
-                  className="mt-4 px-6 py-3 font-bold text-white rounded-lg w-11/12 mb-6"
+                  className="mt-4 px-6 py-2 font-bold text-white rounded-lg w-11/12 mb-3"
                   onClick={() => setOpened(true)}
                 >
                   Continue
@@ -140,7 +140,7 @@ const WebApp = () => {
 
             {/* popup */}
             {opened && (
-              <div className="fixed inset-0 bg-black bg-opacity-50 z-50">
+              <div className="fixed inset-0 bg-black bg-opacity-50 z-50 top-0 left-0 right-0 bottom-0">
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-5 rounded-lg w-11/12 mx-auto popup">
                   <span className="flex justify-right text-xl font-bold text">
                     Chose payment method
