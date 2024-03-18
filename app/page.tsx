@@ -72,12 +72,6 @@ export default function Home() {
   const [opened, setOpened] = useState(false);
   const { user, webApp } = useTelegram();
 
-  useEffect(() => {
-    if (user) {
-      alert(`Hello, ${user.first_name}!`);
-    }
-  }, [user]);
-
   return (
     <TelegramProvider>
       <div className="overflow-hidden pb-32 sm:py-32">
@@ -91,7 +85,7 @@ export default function Home() {
                 </div>
 
                 {/* text */}
-                <p className="text-2xl font-bold tracking-tight sm:text-2xl text">Unlock PRO features</p>
+                <p className="text-2xl font-bold tracking-tight sm:text-2xl text">{user?.first_name}, welcome to our service</p>
                 <dl className="mt-3 max-w-xl space-y-3 text-base leading-3 lg:max-w-none mb-5">
                   {features.map((feature) => (
                     <div key={feature.name} className="relative pl-9">
