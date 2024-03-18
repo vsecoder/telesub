@@ -76,7 +76,7 @@ export default function Home() {
               </div>
 
               {/* text */}
-              <p className="text-2xl font-bold tracking-tight sm:text-2xl h1">Unlock PRO features</p>
+              <p className="text-2xl font-bold tracking-tight sm:text-2xl text">Unlock PRO features</p>
               <dl className="mt-3 max-w-xl space-y-3 text-base leading-3 lg:max-w-none mb-5">
                 {features.map((feature) => (
                   <div key={feature.name} className="relative pl-9">
@@ -91,20 +91,21 @@ export default function Home() {
               {/* plans */}
               {plans.map((plan, index) => (
                 <div
-                  className="mt-3 rounded-lg border-2 cursor-pointer plan"
-                  {...changed === index ? { style: { borderColor: '#2563EB' } } : {}}
+                  {...changed === index ? {
+                    className: "mt-3 rounded-lg border-2 cursor-pointer plan changed"
+                  } : { className: "mt-3 rounded-lg border-2 cursor-pointer plan border-black" }}
                   onClick={() => setChanged(index)}
                   key={index}
                 >
                   <div key={plan.name} className="p-3">
                     <p className="flex items-center justify-between">
-                      <span className="flex text-sm font-bold">
+                      <span className="flex text-sm font-bold text">
                         {plan.name}
                       </span>
                       {plan.discount && (
                         <span className="flex text-sm font-medium text-blue-500">{plan.discount}</span>
                       )}
-                      <span className="flex text-sm font-medium">{plan.price}$ / month</span>
+                      <span className="flex text-sm font-medium text">{plan.price}$ / month</span>
                     </p>
                   </div>
                 </div>
@@ -121,7 +122,7 @@ export default function Home() {
               {/* open popup */}
               <div className="fixed left-0 right-0 flex justify-center border-t border-gray-200 bottom-0 fix-btn">
                 <button
-                  className="mt-4 px-6 py-5 font-bold text-white bg-blue-500 rounded-lg hover:bg-blue-600 w-11/12 mb-6"
+                  className="mt-4 px-6 py-3 font-bold text-white rounded-lg w-11/12 mb-6"
                   onClick={() => setOpened(true)}
                 >
                   Continue
@@ -133,10 +134,10 @@ export default function Home() {
             {opened && (
               <div className="fixed inset-0 bg-black bg-opacity-50 z-50">
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-5 rounded-lg w-11/12 mx-auto popup">
-                  <span className="flex justify-right text-xl font-bold">
+                  <span className="flex justify-right text-xl font-bold text">
                     Chose payment method
-                    <button onClick={() => setOpened(false)} className="ml-auto">
-                      <XMarkIcon className="h-6 w-6 text-gray-500" />
+                    <button onClick={() => setOpened(false)} className="ml-auto bg-transparent rounded-lg p-1">
+                      <XMarkIcon className="h-6 w-6 text-gray-500 bg-transparent" aria-hidden="true" />
                     </button>
                   </span>
                   <dl className="mt-5 max-w-xl space-y-4 text-base mb-10 bg-slate-100 rounded-lg divide-y divide-dashed pt-2">
