@@ -103,9 +103,9 @@ export default function Home() {
                 <a href="#" className="font-medium text-blue-500 hover:underline">privacy policy</a>
               </p>
 
-              <div className="fixed bottom-10 left-0 right-0 flex justify-center border-t border-gray-200 bg-white">
+              <div className="fixed left-0 right-0 flex justify-center border-t border-gray-200 bg-white">
                 <button
-                  className="mt-4 px-6 py-3 font-bold text-white bg-blue-500 rounded-lg hover:bg-blue-600 w-11/12"
+                  className="mt-4 px-6 py-5 font-bold text-white bg-blue-500 rounded-lg hover:bg-blue-600 w-11/12"
                   onClick={() => setOpened(true)}
                 >
                   Continue
