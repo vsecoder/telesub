@@ -100,7 +100,7 @@ const WebApp = () => {
               </div>
 
               {/* text */}
-              <p className="text-2xl font-bold tracking-tight sm:text-2xl text">{user?.first_name}, change subscription</p>
+              <p className="text-2xl font-bold tracking-tight sm:text-2xl text">Change subscription</p>
               <dl className="mt-3 max-w-xl space-y-3 text-base leading-3 lg:max-w-none mb-5">
                 {features.map((feature) => (
                   <div key={feature.name} className="relative pl-9">
