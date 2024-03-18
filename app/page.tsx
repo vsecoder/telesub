@@ -68,8 +68,8 @@ export default function Home() {
               </div>
 
               {/* text */}
-              <p className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl h1">Unlock PRO features</p>
-              <dl className="mt-5 max-w-xl space-y-4 text-base leading-3 lg:max-w-none mb-10">
+              <p className="mt-2 text-2xl font-bold tracking-tight sm:text-2xl h1">Unlock PRO features</p>
+              <dl className="mt-3 max-w-xl space-y-3 text-base leading-3 lg:max-w-none mb-5">
                 {features.map((feature) => (
                   <div key={feature.name} className="relative pl-9">
                     <dt className="inline font-semibold">
