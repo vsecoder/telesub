@@ -69,10 +69,10 @@ const wallets = [
 
 const WebApp = () => {
   const [changed, setChanged] = useState(0);
-  const [opened, setOpened] = useState(true);
+  const [opened, setOpened] = useState(false);
   const { user, webApp, data } = useTelegram();
 
-  const [scheme, setScheme] = useState('dark');
+  const [scheme, setScheme] = useState('light');
 
   useEffect(() => {
     let colorScheme = webApp?.colorScheme;
@@ -136,10 +136,9 @@ const WebApp = () => {
               ))}
 
               {/* footer */}
-              <p className="mt-2 text-sm text-gray-500 text-align-center mb-50">
-                <span>By selecting a plan, you agree to our </span>
+              <p className="mt-2 text-sm text-gray-500 mb-50  text-center">
                 <a href="#" className="font-medium text-blue-500 hover:underline">terms</a>
-                <span> and </span>
+                <span> • </span>
                 <a href="#" className="font-medium text-blue-500 hover:underline">privacy policy</a>
               </p>
 
