@@ -69,7 +69,7 @@ const wallets = [
 
 const WebApp = () => {
   const [changed, setChanged] = useState(0);
-  const [opened, setOpened] = useState(false);
+  const [opened, setOpened] = useState(true);
   const { user, webApp, data } = useTelegram();
 
   const [scheme, setScheme] = useState('dark');
