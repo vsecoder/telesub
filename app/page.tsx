@@ -1,17 +1,12 @@
 "use client";
 import {
   CheckCircleIcon,
-  XMarkIcon,
-  ChevronRightIcon,
-  CreditCardIcon,
-  BanknotesIcon,
-  CurrencyDollarIcon
 } from '@heroicons/react/20/solid';
 import { useState, useEffect } from "react";
-import { TelegramProvider, useTelegram } from "../components/provider";
-import { Header } from "../components/header";
-import { Plans } from "../components/plans";
-import { Features } from "../components/slider";
+import { TelegramProvider, useTelegram } from "@/components/provider";
+import { Header } from "@/components/header";
+import { Plans } from "@/components/plans";
+import { Features } from "@/components/slider";
 
 
 const features = [
@@ -46,31 +41,8 @@ const plans = [
   },
 ];
 
-const wallets = [
-  {
-    name: 'Wallet Pay',
-    icon: BanknotesIcon,
-    description: 'TON, USDT, BTC',
-  },
-  {
-    name: 'Cards',
-    icon: CreditCardIcon,
-    description: 'Visa, Mastercard',
-  },
-  {
-    name: 'Yookassa',
-    icon: CurrencyDollarIcon,
-    description: 'RU cards, SBP',
-  },
-  {
-    name: 'PayPal',
-    icon: CreditCardIcon,
-    description: '',
-  }
-];
 
 const WebApp = () => {
-  const [opened, setOpened] = useState(false);
   const { user, webApp, data } = useTelegram();
 
   const [scheme, setScheme] = useState('light');
@@ -110,42 +82,11 @@ const WebApp = () => {
               <div className="fixed left-0 right-0 flex justify-center border-t border-gray-200 bottom-0 fix-btn">
                 <button
                   className="mt-4 px-6 py-2 font-bold text-white rounded-lg w-11/12 mb-3"
-                  onClick={() => setOpened(true)}
                 >
                   Continue
                 </button>
               </div>
             </div>
-
-            {opened && (
-              <div className="fixed inset-0 bg-black bg-opacity-50 z-50 top-0 left-0 right-0 bottom-0">
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-5 rounded-lg w-11/12 mx-auto popup">
-                  <span className="flex justify-right text-xl font-bold text">
-                    Chose payment method
-                    <a onClick={() => setOpened(false)} className="ml-auto bg-transparent rounded-lg p-1" href="#">
-                      <XMarkIcon className="h-6 w-6 text-gray-500 bg-transparent" aria-hidden="true" />
-                    </a>
-                  </span>
-                  <dl className="mt-5 max-w-xl space-y-4 text-base mb-10 bg-slate-100 rounded-lg divide-y divide-dashed pt-2">
-                    {wallets.map((item) => (
-                      <div key={item.name} className="relative flex gap-x-3 pt-4 pl-4 pb-2">
-                        <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50">
-                          <item.icon className="h-6 w-6 text-sky-900" aria-hidden="true" />
-                        </div>
-                        <div>
-                          <a href="#" className="font-semibold text-gray-900">
-                            {item.name}
-                            <span className="absolute inset-0" />
-                          </a>
-                          <p className="mt-1 text-gray-600">{item.description}</p>
-                        </div>
-                        <ChevronRightIcon className="absolute right-6 h-6 w-6 text-slate-500 vertical-center" />
-                      </div>
-                    ))}
-                  </dl>
-                </div>
-              </div>
-            )}
           </div>
         </div>
       </div>
