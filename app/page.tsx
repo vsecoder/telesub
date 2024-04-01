@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import {
   CheckCircleIcon,
   XMarkIcon,
@@ -10,19 +9,22 @@ import {
 } from '@heroicons/react/20/solid';
 import { useState, useEffect } from "react";
 import { TelegramProvider, useTelegram } from "../components/provider";
+import { Header } from "../components/header";
+import { Plans } from "../components/plans";
+import { Features } from "../components/slider";
 
 
 const features = [
   {
-    name: 'Cool features',
+    text: 'Cool features Cool features Cool features',
     icon: CheckCircleIcon,
   },
   {
-    name: 'Some very cool features',
+    text: 'Some very cool features Cool features Cool features',
     icon: CheckCircleIcon,
   },
   {
-    name: 'The best features',
+    text: 'The best features Cool features Cool features',
     icon: CheckCircleIcon,
   },
 ];
@@ -68,7 +70,6 @@ const wallets = [
 ];
 
 const WebApp = () => {
-  const [changed, setChanged] = useState(0);
   const [opened, setOpened] = useState(false);
   const { user, webApp, data } = useTelegram();
 
@@ -94,55 +95,18 @@ const WebApp = () => {
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
           <div className="lg:pr-8 lg:pt-1">
             <div className="lg:max-w-lg">
-              {/* duck */}
-              <div className="flex justify-center">
-                <Image src="/duck.gif" alt="Duck" width={220} height={220} unoptimized />
-              </div>
+              <Header title="Change subscription" image="/duck.gif" />
 
-              {/* text */}
-              <p className="text-2xl font-bold tracking-tight sm:text-2xl text">Change subscription</p>
-              <dl className="mt-3 max-w-xl space-y-3 text-base leading-3 lg:max-w-none mb-5">
-                {features.map((feature) => (
-                  <div key={feature.name} className="relative pl-9">
-                    <dt className="inline font-semibold">
-                      <feature.icon className="absolute left-1 -top-1.5 h-6 w-6 text-blue-500" aria-hidden="true" />
-                      {feature.name}
-                    </dt>{' '}
-                  </div>
-                ))}
-              </dl>
+              <Features features={features} />
 
-              {/* plans */}
-              {plans.map((plan, index) => (
-                <div
-                  {...changed === index ? {
-                    className: "mt-3 rounded-lg border-2 cursor-pointer plan changed"
-                  } : { className: "mt-3 rounded-lg border-2 cursor-pointer plan border-black" }}
-                  onClick={() => setChanged(index)}
-                  key={index}
-                >
-                  <div key={plan.name} className="p-3">
-                    <p className="flex items-center justify-between">
-                      <span className="flex text-sm font-bold text">
-                        {plan.name}
-                      </span>
-                      {plan.discount && (
-                        <span className="flex text-sm font-medium text-blue-500">{plan.discount}</span>
-                      )}
-                      <span className="flex text-sm font-medium text">{plan.price}$ / month</span>
-                    </p>
-                  </div>
-                </div>
-              ))}
+              <Plans plans={plans} />
 
-              {/* footer */}
               <p className="mt-2 text-sm text-gray-500 mb-50  text-center">
-                <a href="#" className="font-medium text-blue-500 hover:underline">terms</a>
+                <a href="#" className="font-medium hover:underline">Terms of use</a>
                 <span> • </span>
-                <a href="#" className="font-medium text-blue-500 hover:underline">privacy policy</a>
+                <a href="#" className="font-medium hover:underline">Privacy policy</a>
               </p>
 
-              {/* open popup */}
               <div className="fixed left-0 right-0 flex justify-center border-t border-gray-200 bottom-0 fix-btn">
                 <button
                   className="mt-4 px-6 py-2 font-bold text-white rounded-lg w-11/12 mb-3"
@@ -153,7 +117,6 @@ const WebApp = () => {
               </div>
             </div>
 
-            {/* popup */}
             {opened && (
               <div className="fixed inset-0 bg-black bg-opacity-50 z-50 top-0 left-0 right-0 bottom-0">
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-5 rounded-lg w-11/12 mx-auto popup">
